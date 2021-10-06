@@ -59,5 +59,53 @@ function powers(){
 }
 </script>
 
+<form>
+    <input type="radio" id="plus" value="plus" name="Math" onclick="processRadio()"/>
+    <label for="plus">+</label><br>
+    
+    <input type="radio" id="minus" value="minus" name="Math" onclick="processRadio()"/>
+    <label for="minus">-</label><br>
+
+    <input type="radio" id="times" value="times" name="Math" onclick="processRadio()"/>
+    <label for="times">*</label><br>
+
+    <input type="radio" id="divide" value="divide" name="Math" onclick="processRadio()"/>
+    <label for="divide">/</label><br>
+    
+</form>
+<script>
+    function processRadio() {
+  first=document.getElementById("form1_base").value
+  second=document.getElementById("form1_exp").value
+  add = document.getElementById("plus").checked
+  sub = document.getElementById("minus").checked
+  mul = document.getElementById("times").checked
+  divi = document.getElementById("divide").checked
+  out=document.getElementById("operations")
+  if (add == true){
+      result= +first + +second
+      /*out.innerHTML("The addition of  " + base + "  and  " + exponent + " is : " + result)*/
+  }
+  else if ( sub == true){
+      result= first - second
+      //out.innerHTML("The subraction of  " + base + "  and  " + exponent + " is : " + result)
+  }
+  else if (mul == true){
+     result= first * second
+     //out.innerHTML("The multiplication of  " + base + "  and  " + exponent + " is : " + result)
+  }
+  else if (divi == true){
+      result= first / second
+      //out.innerHTML("The division of  " + base + "  and  " + exponent + " is : " + result)
+  }
+  out=document.getElementById("operations").innerHTML="The Result is : "+result
+
+
+
+    }
+</script>
+
+
+
 </body>
 </html> 
