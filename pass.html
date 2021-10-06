@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment06</title>
+    </head>
+ 
+<body>
+
+<h2>Pass phrase by saikrishna veeravelly</h2>
+
+<form>
+    <label for="secretphase">Enter the secret phrase </label>
+    <input type ="password" id="secretphase" name="secretphase" min=10 max=50 step=2 value="Let me in"> <br>
+
+    <label for="checkphrase">Enter a phrase </label>
+    <input type ="text" id="checkphrase" name="checkphrase" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<p id="result">Attempts display here </p>
+
+<script> 
+let correct = 0;
+let wrong = 0;
+
+function processPhrase()
+    {
+    
+    console.log("Getting form values")
+    
+    secretphase = document.getElementById("secretphase").value;
+    checkphrase = document.getElementById("checkphrase").value;
+
+    out = document.getElementById("result");
+    if(secretphase == checkphrase)
+    {
+        correct++;
+        alert("Access allowed");
+        out.innerHTML = "Correct score: "+correct;
+    }
+    else
+    {
+        wrong++;
+        alert("Access denied");
+        out.innerHTML = "Wrong score: "+wrong;
+    }
+    out.innerHTML = "correct count"+ correct +" ; wrong count "+ wrong
+}
+
+</script>
+
+</body>
+</html> 
