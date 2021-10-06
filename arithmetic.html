@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic using JavaScript</title>
+    </head>
+<body>
+<h5>saikrishna veeravelly computes</h5>
+<h2>Getting input</h2>
+
+<style>
+     .button {
+            background-color: gray;
+            border: none;
+            color: lightskyblue;
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .h4 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+
+        .h2 {
+            font-family: monospace;
+        }
+</style>
+
+<form>
+    <label for="form1_base">Enter a base: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="number" id="form1_base" name="form1_base" value=10> <br>
+    <br>
+    <label for="form1_exp">Enter an exponent: </label>
+    <input type="number" id="form1_exp" name="form1_exp" value=2> <br>
+    <br>
+    <input type="button" class="button" onclick="powers()" value="compute">
+</form>
+
+
+<p id="result">The Result of the Powers</p>
+
+<p id="operations">The Value After Operations</p>
+
+
+<script> 
+
+function powers(){
+    console.log("Getting form values")
+    base = document.getElementById("form1_base").value
+    exp = document.getElementById("form1_exp").value
+    let result=" ";
+    out = document.getElementById("result")
+    for(i=1;i<=exp;i++){
+        result += Math.pow(base,i)+" "
+    }
+    out.innerHTML = "Powers of " + base + " are: " + result;
+}
+</script>
+
+</body>
+</html> 
