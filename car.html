@@ -9,55 +9,65 @@
 <h2>Getting input</h2>
 
 <form>
-    <input type="checkbox" id="checkbox1" name="checkbox1" value="electric">
-    <label for="checkbox1">electric</label><br>
-
-    <input type="checkbox" id="checkbox2" name="checkbox2" value="ac">
-    <label for="checkbox2">ac</label><br>
-
-    <input type="checkbox" id="checkbox3" name="checkbox3" value="gps">
-    <label for="checkbox3">gps</label><br>
-
+    <label for = "electric">electric</label>
+    <input type="checkbox" id = "electric" value="electric"/>
+    <br>
+    <label for = "ac">ac</label>
+    <input type="checkbox" id = "ac" value="ac"/>
+   <br>
+   <label for = "gps">gps</label>
+    <input type="checkbox" id = "gps" value="gps"/>
+    <br>
+    <br>
     <input type="button" onclick="orderCar()" value="Order a car">
-</form><br>
+</form>
 
-<p id="result">This text will be replaced </p>
+<br>
+<form>
+   <label for = "property">Enter a property:</label>
+   <input type = "text" id = "property" value = "color"/>
+   <br>
+   <label for = "value">Enter a value:</label>
+   <input type = "text" id = "value" />
+   <br><br>
+   <input type = "button" onclick="updateCar()" value = "Update the car">
+</form>
+<br>
+<p id="resultValue">Selected car details displays here </p>
+<script>
+    var my_car={}
+function orderCar()
+{
+my_car = {}
 
-<script> 
-    let my_car = {}
-    function orderCar(){
-        my_car = {}
-        var a = document.getElementById("checkbox1").checked
-        var b = document.getElementById("checkbox2").checked
-        var c = document.getElementById("checkbox3").checked
-        if(a){
-            my_car.electric = document.getElementById("checkbox1").checked
-            console.log(my_car)
-        }
-        else{
-            my_car.electric = false
-            console.log(my_car)
-        }
-        if(b){
-            my_car.ac = document.getElementById("checkbox2").checked
-            console.log(my_car)
-        }
-        else{
-            my_car.ac = false
-            console.log(my_car)
-        }
-        if(c){
-            my_car.gps = document.getElementById("checkbox3").checked
-            console.log(my_car)
-        }
-        else{
-            my_car.gps = false
-            console.log(my_car)
-        }
-        document.getElementById("result").innerHTML = "Electric :  " + my_car.electric + " , " + "AC :  " + my_car.ac + " , " + " GPS :  " + my_car.gps;
-    }
-    </script>
+if (document.getElementById("electric").checked == true) {
+my_car['electric'] = 'true';
+} else {
+my_car['electric'] = 'false';
+}
 
+if (document.getElementById("ac").checked == true) {
+my_car['ac'] = 'true';
+} else {
+my_car['ac'] = 'false';
+}
+
+if (document.getElementById("gps").checked == true) {
+my_car['gps'] = 'true';
+} else {
+my_car['gps'] = 'false';
+}
+document.getElementById("resultValue").innerHTML = JSON.stringify(my_car);
+
+}
+function updateCar(){
+property = document.getElementById("property").value
+value = document.getElementById("value").value
+my_car[property] = value
+document.getElementById("resultValue").innerHTML = JSON.stringify(my_car);
+}
+
+</script>
 
 </body>
 </html> 
