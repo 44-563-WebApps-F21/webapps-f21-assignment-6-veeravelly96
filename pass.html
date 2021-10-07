@@ -45,6 +45,9 @@ function processPhrase()
         wrong++;
         alert("Access denied");
         out.innerHTML = "Wrong score: "+wrong;
+        if(wrong>3){
+            alert("account blocked")
+        }
     }
     out.innerHTML = "correct count"+ correct +" ; wrong count "+ wrong
 }
